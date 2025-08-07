@@ -1,5 +1,5 @@
 NAME := my-echo
-REPOSITORY := 1270346/my-nginx:0.1
+REPOSITORY := 1270346/my-echo
 TAG := 20250807
 GOOS := linux
 GOARCH := amd64
