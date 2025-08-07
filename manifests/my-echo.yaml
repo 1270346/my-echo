@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: my-echo
-        image: ysakashita/my-echo:20231108
+        image: 1270346/my-echo:20250807
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: my-echo
 spec:
-  selector:
+  selectori:
     app: my-echo
   ports:
   - port: 1323
@@ -30,18 +30,18 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-echo
+  name: my-nginx-ing
   labels:
     name: my-echo
 spec:
   rules:
-  - host: my-echo.127.0.0.1.nip.io
+  - host: web.127.0.0.1.nip.io
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: /hoge
         backend:
           service:
-            name: my-echo
+            name: my-nginx-service
             port: 
-              number: 1323
+              number: 80
